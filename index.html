@@ -7,15 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-primary: #030712;
-            --bg-secondary: #0b0f19;
-            --card-bg: rgba(30, 41, 59, 0.5);
-            --card-border: rgba(56, 189, 248, 0.15);
+            --bg-primary: #020617;
+            --bg-card: #090e1a;
+            --border-color: rgba(56, 189, 248, 0.15);
             --accent-cyan: #38bdf8;
             --accent-purple: #818cf8;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -32,21 +30,22 @@
             line-height: 1.7;
             overflow-x: hidden;
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(129, 140, 248, 0.05) 0%, transparent 40%);
+                radial-gradient(circle at 10% 10%, rgba(56, 189, 248, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 90% 90%, rgba(129, 140, 248, 0.1) 0%, transparent 40%),
+                linear-gradient(to bottom, #020617, #090d16);
         }
 
-        /* Barra de Navegação */
+        /* Navbar Flutuante com Glassmorphism */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(3, 7, 18, 0.85);
-            backdrop-filter: blur(12px);
+            background: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(20px);
             z-index: 1000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 15px 0;
+            padding: 18px 0;
         }
 
         .nav-container {
@@ -55,12 +54,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
+            padding: 0 25px;
         }
 
         .logo {
-            font-weight: 700;
-            font-size: 1.15rem;
+            font-weight: 800;
+            font-size: 1.25rem;
             color: var(--text-main);
             letter-spacing: -0.5px;
         }
@@ -71,7 +70,7 @@
 
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 30px;
             list-style: none;
         }
 
@@ -80,45 +79,46 @@
             text-decoration: none;
             font-size: 0.95rem;
             font-weight: 500;
-            transition: var(--transition);
+            transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
             color: var(--accent-cyan);
         }
 
-        /* Hero Section */
+        /* Hero Seção de Impacto */
         header {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 120px 20px 60px;
-            max-width: 900px;
+            padding: 140px 20px 80px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         .hero-badge {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            background: rgba(56, 189, 248, 0.1);
-            border: 1px solid var(--card-border);
-            padding: 6px 16px;
+            gap: 10px;
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid var(--border-color);
+            padding: 8px 20px;
             border-radius: 50px;
             font-size: 0.85rem;
             color: var(--accent-cyan);
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             font-family: 'Fira Code', monospace;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
         }
 
         header h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
             font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 20px;
-            line-height: 1.2;
+            letter-spacing: -2px;
+            margin-bottom: 25px;
+            line-height: 1.15;
         }
 
         header h1 span {
@@ -129,9 +129,9 @@
 
         header p {
             color: var(--text-muted);
-            font-size: 1.15rem;
-            margin-bottom: 40px;
-            max-width: 700px;
+            font-size: 1.2rem;
+            margin-bottom: 45px;
+            max-width: 750px;
             margin-left: auto;
             margin-right: auto;
             text-align: justify;
@@ -139,7 +139,7 @@
 
         .btn-group {
             display: flex;
-            gap: 15px;
+            gap: 18px;
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -150,171 +150,171 @@
             justify-content: center;
             background: linear-gradient(135deg, var(--accent-cyan), #0284c7);
             color: var(--bg-primary);
-            padding: 14px 28px;
-            border-radius: 12px;
+            padding: 15px 35px;
+            border-radius: 14px;
             font-weight: 700;
             text-decoration: none;
-            transition: var(--transition);
-            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(56, 189, 248, 0.3);
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 25px rgba(56, 189, 248, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(56, 189, 248, 0.5);
         }
 
         .btn-outline {
             background: transparent;
-            border: 1px solid var(--card-border);
+            border: 1px solid var(--border-color);
             color: var(--text-main);
             box-shadow: none;
         }
 
         .btn-outline:hover {
             border-color: var(--accent-cyan);
-            background: rgba(56, 189, 248, 0.05);
+            background: rgba(56, 189, 248, 0.08);
         }
 
-        /* Containers & Sections */
+        /* Containers e Seções */
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 80px 20px;
+            padding: 100px 25px;
         }
 
         section {
             border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 80px;
+            padding-top: 100px;
         }
 
         .section-title {
-            font-size: 2rem;
-            font-weight: 700;
+            font-size: 2.4rem;
+            font-weight: 800;
             margin-bottom: 15px;
             text-align: center;
+            letter-spacing: -1px;
         }
 
         .section-subtitle {
             text-align: center;
             color: var(--text-muted);
-            margin-bottom: 50px;
-            font-size: 1rem;
+            margin-bottom: 60px;
+            font-size: 1.1rem;
         }
 
-        /* Grid Cards Dinâmicos */
-        .grid {
+        /* Grid Bento Moderno com Efeito Spotlight */
+        .bento-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
 
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            backdrop-filter: blur(10px);
-            padding: 35px;
-            border-radius: 20px;
-            transition: var(--transition);
+        .bento-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 40px;
             position: relative;
             overflow: hidden;
+            transition: transform 0.4s ease, border-color 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .card::before {
+        .bento-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(56, 189, 248, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+        }
+
+        .bento-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+            height: 100%;
+            background: radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(56, 189, 248, 0.06), transparent 40%);
             opacity: 0;
-            transition: var(--transition);
+            transition: opacity 0.3s ease;
+            pointer-events: none;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(56, 189, 248, 0.4);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .card:hover::before {
+        .bento-card:hover::before {
             opacity: 1;
         }
 
-        .card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
         }
 
-        .card p {
+        .bento-card h3 {
+            font-size: 1.45rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .bento-card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
+            font-size: 0.98rem;
+            margin-bottom: 30px;
             text-align: justify;
         }
 
-        .tags {
+        .tags-container {
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
+            margin-top: auto;
         }
 
         .tag {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.75rem;
+            background: rgba(56, 189, 248, 0.06);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.78rem;
             font-family: 'Fira Code', monospace;
             color: var(--accent-cyan);
         }
 
-        /* Seção Sobre / Diferencial Técnico */
-        .about-grid {
+        /* Seção Sobre Assimétrica */
+        .about-layout {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
             align-items: center;
-        }
-
-        @media (max-width: 768px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-            .nav-links {
-                display: none;
-            }
         }
 
         .about-text p {
             color: var(--text-muted);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-align: justify;
+            font-size: 1.1rem;
         }
 
         .terminal-box {
-            background: var(--bg-secondary);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            padding: 20px;
+            background: #050811;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 30px;
             font-family: 'Fira Code', monospace;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
         }
 
         .terminal-header {
             display: flex;
-            gap: 6px;
-            margin-bottom: 15px;
+            gap: 8px;
+            margin-bottom: 20px;
         }
 
         .dot {
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
         }
 
@@ -326,29 +326,49 @@
             color: var(--accent-cyan);
         }
 
-        /* Rodapé */
-        footer {
-            background: var(--bg-secondary);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        /* CTA Banner Final */
+        .cta-banner {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.05));
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            padding: 80px 40px;
             text-align: center;
-            padding: 50px 20px;
-            color: var(--text-muted);
-            font-size: 0.9rem;
+            margin-top: 50px;
         }
 
-        footer p span {
+        /* Rodapé */
+        footer {
+            background: var(--bg-card);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            padding: 60px 25px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        footer span {
             color: var(--accent-cyan);
         }
 
         .contact-info {
             margin-top: 15px;
-            font-size: 0.95rem;
-            color: var(--text-main);
         }
 
         .contact-info a {
             color: var(--accent-cyan);
             text-decoration: none;
+        }
+
+        @media (max-width: 900px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-layout {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -369,10 +389,11 @@
     <header>
         <div>
             <div class="hero-badge">
-                <span>⚡</span> Marketing + Comunicação + Tecnologia
+                <span>⚡</span> Marketing Digital + Comunicação + Tecnologia
             </div>
             <h1>Transformando dados e narrativas em <span>resultados reais</span>.</h1>
             <p>Profissional multidisciplinar especializado em social media, marketing de conteúdo, estratégias de SEO e desenvolvimento web.</p>
+            
             <div class="btn-group">
                 <a href="https://wa.me/5579991487844?text=Olá!%20Vi%20seu%20portfólio%20e%20quero%20conversar%20sobre%20projetos." class="btn" target="_blank">Falar no WhatsApp</a>
                 <a href="#projects" class="btn btn-outline">Ver Portfólio</a>
@@ -387,10 +408,10 @@
             <h2 class="section-title">O Diferencial Multidisciplinar</h2>
             <p class="section-subtitle">Unindo a sensibilidade da comunicação com a engenharia lógica da tecnologia.</p>
             
-            <div class="about-grid">
+            <div class="about-layout">
                 <div class="about-text">
-                    <p>Formado em Marketing e com vivência acadêmica e prática em Comunicação (Jornalismo), Tecnologia (ADS) e Educação, minha abordagem vai muito além do básico.</p>
-                    <p>Entendo de comportamento de consumo, estruturação de marcas do zero e criação de ativos digitais perenes — aplicando SEO, lógica de programação e estratégias de conversão para colocar marcas no topo.</p>
+                    <p>Formado em Marketing e com vivência prática em Comunicação (Jornalismo), Tecnologia (ADS) e Educação, minha abordagem vai muito além do básico oferecido pelo mercado tradicional.</p>
+                    <p>Entendo de comportamento de consumo, estruturação de marcas do zero e criação de ativos digitais perenes — aplicando SEO, lógica de programação e estratégias de conversão de alto impacto para colocar marcas no topo.</p>
                 </div>
                 <div>
                     <div class="terminal-box">
@@ -413,36 +434,45 @@
             </div>
         </section>
 
-        <!-- O que eu faço -->
+        <!-- Áreas de Atuação -->
         <section id="services">
             <h2 class="section-title">Áreas de Atuação</h2>
             <p class="section-subtitle">Soluções completas para posicionar e escalar sua presença digital.</p>
             
-            <div class="grid">
-                <div class="card">
-                    <h3>📱 Social Media & Posicionamento</h3>
-                    <p>Gestão de redes sociais com foco em conversão e autoridade. Linhas editoriais inteligentes e roteiros dinâmicos para prender a atenção do público.</p>
-                    <div class="tags">
+            <div class="bento-grid">
+                <div class="bento-card">
+                    <div>
+                        <div class="card-icon">📱</div>
+                        <h3>Social Media & Posicionamento</h3>
+                        <p>Gestão completa de redes sociais com foco em conversão e autoridade. Linhas editoriais inteligentes e roteiros dinâmicos para prender a atenção do público.</p>
+                    </div>
+                    <div class="tags-container">
                         <span class="tag">Planejamento</span>
                         <span class="tag">Reels/TikTok</span>
                         <span class="tag">Branding</span>
                     </div>
                 </div>
 
-                <div class="card">
-                    <h3>✍️ Marketing de Conteúdo & SEO</h3>
-                    <p>Produção de conteúdo estratégico e otimização avançada para mecanismos de busca. Atraia clientes orgânica e continuamente pelo Google.</p>
-                    <div class="tags">
+                <div class="bento-card">
+                    <div>
+                        <div class="card-icon">✍️</div>
+                        <h3>Marketing de Conteúdo & SEO</h3>
+                        <p>Produção de conteúdo estratégico e otimização avançada para mecanismos de busca. Atraia clientes orgânica e continuamente através de artigos de alta performance.</p>
+                    </div>
+                    <div class="tags-container">
                         <span class="tag">Copywriting</span>
                         <span class="tag">SEO Técnico</span>
                         <span class="tag">Blogs</span>
                     </div>
                 </div>
 
-                <div class="card">
-                    <h3>💻 Presença Digital & Web</h3>
-                    <p>Criação de estruturas web de alta performance unindo design limpo, código otimizado (HTML/CSS/JS) e foco total na conversão do usuário.</p>
-                    <div class="tags">
+                <div class="bento-card">
+                    <div>
+                        <div class="card-icon">💻</div>
+                        <h3>Presença Digital & Web</h3>
+                        <p>Criação de estruturas web de alta performance unindo design limpo, código otimizado (HTML/CSS/JS) e foco total na conversão do usuário final.</p>
+                    </div>
+                    <div class="tags-container">
                         <span class="tag">HTML5/CSS3</span>
                         <span class="tag">Landing Pages</span>
                         <span class="tag">UI/UX</span>
@@ -456,45 +486,56 @@
             <h2 class="section-title">Cases & Projetos</h2>
             <p class="section-subtitle">Iniciativas próprias e projetos práticos que compõem meu laboratório digital.</p>
             
-            <div class="grid">
-                <div class="card">
-                    <h3>🚀 Start Mídia & Conteúdo</h3>
-                    <p>Agência voltada para estruturação de presença digital, gestão de mídias e soluções de conteúdo criativo para negócios locais e infoprodutos.</p>
-                    <div class="tags">
+            <div class="bento-grid">
+                <div class="bento-card">
+                    <div>
+                        <div class="card-icon">🚀</div>
+                        <h3>Start Mídia & Conteúdo</h3>
+                        <p>Agência própria voltada para estruturação de presença digital, gestão de mídias e soluções de conteúdo criativo para negócios locais e infoprodutos.</p>
+                    </div>
+                    <div class="tags-container">
                         <span class="tag">Agência</span>
                         <span class="tag">Gestão</span>
+                        <span class="tag">Estratégia</span>
                     </div>
                 </div>
 
-                <div class="card">
-                    <h3>📰 Estação 31 & Giro 31</h3>
-                    <p>Projeto de Web TV e portal de notícias estruturado com identidade visual própria, roteiros de programas e interface web interativa.</p>
-                    <div class="tags">
+                <div class="bento-card">
+                    <div>
+                        <div class="card-icon">📰</div>
+                        <h3>Estação 31 & Giro 31</h3>
+                        <p>Projeto de Web TV e portal de notícias estruturado com identidade visual própria, roteiros de programas e interface web interativa.</p>
+                    </div>
+                    <div class="tags-container">
                         <span class="tag">Web TV</span>
                         <span class="tag">Jornalismo</span>
+                        <span class="tag">Mídia</span>
                     </div>
                 </div>
 
-                <div class="card">
-                    <h3>📚 Pí Reforço Escolar</h3>
-                    <p>Iniciativa de educação e reforço escolar com planejamento visual, banners promocionais, ferramentas de gestão e estratégias de captação.</p>
-                    <div class="tags">
+                <div class="bento-card">
+                    <div>
+                        <div class="card-icon">📚</div>
+                        <h3>Pí Reforço Escolar</h3>
+                        <p>Iniciativa educacional com planejamento visual, banners promocionais, ferramentas de gestão e estratégias ativas de captação de alunos.</p>
+                    </div>
+                    <div class="tags-container">
                         <span class="tag">Marketing Educacional</span>
                         <span class="tag">Gestão</span>
+                        <span class="tag">Design</span>
                     </div>
                 </div>
             </div>
         </section>
 
-    </div>
-
-    <section id="contact" style="text-align: center; padding: 80px 20px; background: var(--bg-secondary);">
-        <div class="container" style="padding: 0;">
-            <h2 class="section-title">Vamos trabalhar juntos?</h2>
+        <!-- CTA Banner Final -->
+        <div class="cta-banner" id="contact">
+            <h2 class="section-title" style="margin-bottom: 15px;">Vamos trabalhar juntos?</h2>
             <p class="section-subtitle" style="margin-bottom: 30px;">Seja para destravar suas redes sociais, criar conteúdos em SEO ou desenvolver sua presença web.</p>
             <a href="https://wa.me/5579991487844?text=Olá!%20Vi%20seu%20portfólio%20e%20quero%20fechar%20um%20projeto." class="btn" target="_blank">Chamar no WhatsApp Agora</a>
         </div>
-    </section>
+
+    </div>
 
     <footer>
         <p>&copy; 2026 Breno Thaynan — <span>Start Mídia & Conteúdo</span>. Todos os direitos reservados.</p>
@@ -502,6 +543,20 @@
             E-mail comercial: <a href="mailto:comercial.startmidia@gmail.com">comercial.startmidia@gmail.com</a> | WhatsApp: (79) 99148-7844
         </div>
     </footer>
+
+    <script>
+        // Efeito de Spotlight nos Cards (Luz seguindo o mouse)
+        const cards = document.querySelectorAll('.bento-card');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
 
 </body>
 </html>
